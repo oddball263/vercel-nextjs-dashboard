@@ -13,11 +13,18 @@ const iconMap = {
   invoices: InboxIcon,
 };
 
+type totalPaidInvoices = number;
+
 export default async function CardWrapper({
   totalPaidInvoices,
   totalPendingInvoices,
   numberOfInvoices,
   numberOfCustomers,
+}: {
+  totalPaidInvoices: string | number;
+  totalPendingInvoices: string | number;
+  numberOfInvoices: string | number;
+  numberOfCustomers: string | number;
 }) {
   return (
     <>

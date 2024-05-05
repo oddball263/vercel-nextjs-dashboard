@@ -12,6 +12,10 @@ import { formatCurrency } from './utils';
 // control caching
 import { unstable_noStore as noStore } from 'next/cache';
 
+//
+// ---- data fetching functions ---------------------
+//
+//
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
