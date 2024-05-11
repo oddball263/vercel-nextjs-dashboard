@@ -13,8 +13,14 @@ export default async function InvoicesTable({
 }) {
   const invoices = await fetchFilteredInvoices(query, currentPage);
 
+  const getLog = () => {
+    console.log('InvoicesTable rendering, query:', query);
+    return '';
+  };
+
   return (
     <div className="mt-6 flow-root">
+      {getLog()}
       <div className="inline-block min-w-full align-middle">
         <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
           <div className="md:hidden">
