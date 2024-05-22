@@ -6,6 +6,27 @@ import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
 
 export default function Page() {
+  const fn1 = (name: string[]) => {
+    return name.length;
+  };
+
+  console.log('fn1 length: ', fn1(['Bill', 'Fred', `Joe`, `Mary`]));
+
+  class GenericVal<T> {
+    constructor(z: T) {
+      this.zeroValue = z;
+    }
+    zeroValue: T;
+    add: ((x: T, y: T) => T) | undefined;
+  }
+
+  let myGeneric = new GenericVal<string>('zStart ');
+  myGeneric.add = function (x, y) {
+    return (this.zeroValue.length + x.length + y.length).toString();
+  };
+
+  console.log('myGeneric.add:', myGeneric.add('xStart! ', 'xFinish!.'));
+
   return (
     <main className="flex min-h-screen flex-col p-6">
       <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
